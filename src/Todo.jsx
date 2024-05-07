@@ -1,10 +1,14 @@
-function Todo() {
+function Todo({todoName}) {
+
+    function delteTodo() {
+        //TODO
+    }
 
     return (
         <div>
-            <h1>s</h1>
-            <p>so</p>
-            <p>so</p>
+            <p>{todoName.title}</p>
+            <button>DONE</button>
+            <button onClick={() => console.log(todoName.id)}>DELETE</button>
         </div>
     )
 }
