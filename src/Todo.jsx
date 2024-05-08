@@ -1,14 +1,15 @@
-function Todo({todoName}) {
+function Todo({todoElement, todoList, setTodoList}) {
 
-    function delteTodo() {
-        //TODO
+    function deleteTodo() {
+        const newArr = todoList.filter((item) => item.id !== todoElement.id)
+        setTodoList(newArr)
     }
 
     return (
         <div>
-            <p>{todoName.title}</p>
+            <p>{todoElement.title}</p>
             <button>DONE</button>
-            <button onClick={() => console.log(todoName.id)}>DELETE</button>
+            <button onClick={() => deleteTodo()}>DELETE</button>
         </div>
     )
 }

@@ -1,24 +1,25 @@
 import React, { useState } from 'react'
 
-function Header({oldTodo, addTodo}) {
-    const [value, setValue] = useState('')
-    const [count, setCount] = useState(1)
+function Header({todoList, setTodoList}) {
+    const [newTodoStr, setNewTodoStr] = useState('')
+    const [id, setId] = useState(1)
 
 
-    function updateValue() {
-        setValue(document.querySelector('input').value)
+    function updateNewTodoStr() {
+        setNewTodoStr(document.querySelector('input').value)
     }
 
-    function btnClick() {
-        setCount(count + 1)
-        addTodo([...oldTodo, {id : count, title : value}])
+    function btnClickAdd() {
+        setId(id + 1)
+        setTodoList([...todoList, {id : id, title : newTodoStr}])
+        setNewTodoStr('')
     }
 
   return (
     <div>
         <h1>C'est moi</h1>
-        <input type='text' value={value} onChange={() => updateValue()} className='inp'></input>
-        <button className='btn' onClick={() => btnClick()}>ADD TODO</button>
+        <input type='text' value={newTodoStr} onChange={() => updateNewTodoStr()} className='inp'></input>
+        <button className='btn' onClick={() => btnClickAdd()}>ADD TODO</button>
     </div>
   )
 }
