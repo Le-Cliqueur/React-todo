@@ -11,7 +11,7 @@ function Header({todoList, setTodoList}) {
 
     function btnClickAdd() {
         setId(id + 1)
-        setTodoList([...todoList, {id : id, title : newTodoStr}])
+        setTodoList([...todoList, {id : id, title : newTodoStr, isCompleted : false}])
         setNewTodoStr('')
     }
 

@@ -2,9 +2,12 @@ import React from 'react'
 import Todo from './Todo'
 
 function Todos({todoList, setTodoList}) {
+
+  const reverseTodoList = todoList.slice(0).reverse();
+
   return (
     <div>
-        {todoList.map((item) => (
+        {reverseTodoList.map((item) => (
             <Todo key={item.id} todoElement={item} todoList={todoList} setTodoList={setTodoList}></Todo>
         ))}
     </div>

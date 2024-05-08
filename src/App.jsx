@@ -3,7 +3,7 @@ import Header from './Header'
 import Todos from './Todos'
 
 function App() {
-  const [todoList, setTodoList] = useState([{id : 0, title : "blabla"}])
+  const [todoList, setTodoList] = useState([{id : 0, title : "blabla", isCompleted : false}])
 
   return (
     <>
