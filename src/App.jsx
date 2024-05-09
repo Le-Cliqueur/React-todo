@@ -7,8 +7,10 @@ function App() {
 
   return (
     <>
+    <div className='all'>
       <Header todoList={todoList} setTodoList={setTodoList}></Header>
       <Todos todoList={todoList} setTodoList={setTodoList}></Todos>
+    </div>
     </>
   )
 }

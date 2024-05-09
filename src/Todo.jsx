@@ -11,14 +11,20 @@ function Todo({todoElement, todoList, setTodoList}) {
 
     function completedTodo(e) {
         setTodoElem({...todoElement, isCompleted : !(todoElem.isCompleted)})
-        e.target.parentElement.style.backgroundColor == 'green' ?  e.target.parentElement.style.backgroundColor = '' : e.target.parentElement.style.backgroundColor = 'green'
+        if (e.target.parentElement.parentElement.style.backgroundColor == '') {
+            e.target.parentElement.parentElement.style.backgroundColor = 'olive'
+        } else {
+            e.target.parentElement.parentElement.style.backgroundColor = ''
+        }
     }
 
     return (
-        <div>
-            <p>{todoElement.title}</p>
-            <button onClick={(e) => completedTodo(e)}>DONE</button>
-            <button onClick={() => deleteTodo()}>DELETE</button>
+        <div className="one-todo">
+            <p className="title">{todoElement.title}</p>
+            <div className="btns">
+                <button className="btn-done" onClick={(e) => completedTodo(e)}>DONE</button>
+                <button className="btn-delete" onClick={() => deleteTodo()}>DELETE</button>
+            </div>
         </div>
     )
 }

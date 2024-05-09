@@ -6,7 +6,7 @@ function Todos({todoList, setTodoList}) {
   const reverseTodoList = todoList.slice(0).reverse();
 
   return (
-    <div>
+    <div className='todo-bloc'>
         {reverseTodoList.map((item) => (
             <Todo key={item.id} todoElement={item} todoList={todoList} setTodoList={setTodoList}></Todo>
         ))}
